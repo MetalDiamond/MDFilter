@@ -14,68 +14,63 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QWidget" name="horizontalLayoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>10</y>
-      <width>221</width>
-      <height>551</height>
-     </rect>
-    </property>
-    <layout class="QHBoxLayout" name="infoLayout">
-     <item>
-      <layout class="QFormLayout" name="formLayout">
-       <property name="labelAlignment">
-        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-       </property>
-       <item row="2" column="0">
-        <widget class="QLabel" name="imagePath">
-         <property name="text">
-          <string>/home/none.jpg</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="0">
-        <widget class="QLabel" name="label">
-         <property name="text">
-          <string>File name</string>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="0">
-        <widget class="QLabel" name="label_2">
-         <property name="text">
-          <string/>
-         </property>
-        </widget>
-       </item>
-       <item row="4" column="0">
-        <widget class="QLabel" name="label_3">
-         <property name="text">
-          <string>X : </string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QWidget" name="horizontalLayoutWidget_2">
-    <property name="geometry">
-     <rect>
-      <x>239</x>
-      <y>9</y>
-      <width>741</width>
-      <height>551</height>
-     </rect>
-    </property>
-    <layout class="QHBoxLayout" name="imageLayout">
-     <item>
-      <widget class="QGraphicsView" name="graphicsView"/>
-     </item>
-    </layout>
-   </widget>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <layout class="QHBoxLayout" name="infoLayout">
+      <item>
+       <layout class="QFormLayout" name="formLayout">
+        <property name="labelAlignment">
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+        </property>
+        <item row="2" column="0">
+         <widget class="QLabel" name="imagePath">
+          <property name="maximumSize">
+           <size>
+            <width>500</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>/home/none.jpg</string>
+          </property>
+          <property name="wordWrap">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="label">
+          <property name="text">
+           <string>File name</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QLabel" name="label_2">
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="0">
+         <widget class="QLabel" name="label_3">
+          <property name="text">
+           <string>X : </string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+    <item row="0" column="1">
+     <layout class="QHBoxLayout" name="imageLayout">
+      <item>
+       <widget class="QGraphicsView" name="graphicsView"/>
+      </item>
+     </layout>
+    </item>
+   </layout>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
@@ -83,19 +78,19 @@
      <x>0</x>
      <y>0</y>
      <width>991</width>
-     <height>22</height>
+     <height>31</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
     <property name="title">
-     <string>File</string>
+     <string>Fi&amp;le</string>
     </property>
     <addaction name="actionOpen_Image"/>
     <addaction name="actionSave_Image"/>
    </widget>
    <widget class="QMenu" name="menuCompression">
     <property name="title">
-     <string>Compressing</string>
+     <string>C&amp;ompressing</string>
     </property>
     <addaction name="actionMSE"/>
     <addaction name="actionGenerate_Rainbow"/>
@@ -105,11 +100,11 @@
    </widget>
    <widget class="QMenu" name="menuAnalyse">
     <property name="title">
-     <string>Analyse</string>
+     <string>Anal&amp;yse</string>
     </property>
     <widget class="QMenu" name="menuFilter">
      <property name="title">
-      <string>Filter</string>
+      <string>&amp;Filter</string>
      </property>
      <addaction name="actionGaussian"/>
      <addaction name="actionSigma"/>
@@ -133,42 +128,45 @@
   <widget class="QStatusBar" name="statusBar"/>
   <action name="actionOpen_Image">
    <property name="text">
-    <string>Open Image</string>
+    <string>&amp;Open Image</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
    </property>
   </action>
   <action name="actionGaussian">
    <property name="text">
-    <string>Gaussian</string>
+    <string>&amp;Gaussian</string>
    </property>
   </action>
   <action name="actionSigma">
    <property name="text">
-    <string>Sigma</string>
+    <string>&amp;Sigma</string>
    </property>
   </action>
   <action name="actionMedian">
    <property name="text">
-    <string>Median</string>
+    <string>&amp;Median</string>
    </property>
   </action>
   <action name="actionAverage">
    <property name="text">
-    <string>Average</string>
+    <string>&amp;Average</string>
    </property>
   </action>
   <action name="actionMSE">
    <property name="text">
-    <string>MSE</string>
+    <string>&amp;MSE</string>
    </property>
   </action>
   <action name="actionGenerate_Rainbow">
    <property name="text">
-    <string>Generate Rainbow</string>
+    <string>&amp;Generate Rainbow</string>
    </property>
   </action>
   <action name="actionSet_LUT">
    <property name="text">
-    <string>Set LUT</string>
+    <string>Set &amp;LUT</string>
    </property>
   </action>
   <action name="actionFloyd_Steinberg">
@@ -178,12 +176,15 @@
   </action>
   <action name="actionQuantify">
    <property name="text">
-    <string>Quantify</string>
+    <string>&amp;Quantify</string>
    </property>
   </action>
   <action name="actionSave_Image">
    <property name="text">
-    <string>Save Image</string>
+    <string>&amp;Save Image</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
    </property>
   </action>
  </widget>
