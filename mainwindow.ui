@@ -14,59 +14,70 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <layout class="QGridLayout" name="gridLayout">
-    <item row="0" column="0">
-     <layout class="QHBoxLayout" name="infoLayout">
-      <item>
-       <layout class="QFormLayout" name="formLayout">
-        <property name="labelAlignment">
-         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QGroupBox" name="groupBox">
+      <property name="minimumSize">
+       <size>
+        <width>200</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="title">
+       <string/>
+      </property>
+      <widget class="QGroupBox" name="groupBox_2">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>101</width>
+         <height>81</height>
+        </rect>
+       </property>
+       <property name="title">
+        <string>Position</string>
+       </property>
+       <widget class="QWidget" name="verticalLayoutWidget">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>30</y>
+          <width>81</width>
+          <height>46</height>
+         </rect>
         </property>
-        <item row="2" column="0">
-         <widget class="QLabel" name="imagePath">
-          <property name="maximumSize">
-           <size>
-            <width>500</width>
-            <height>16777215</height>
-           </size>
-          </property>
-          <property name="text">
-           <string>/home/none.jpg</string>
-          </property>
-          <property name="wordWrap">
-           <bool>true</bool>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="0">
-         <widget class="QLabel" name="label">
-          <property name="text">
-           <string>File name</string>
-          </property>
-         </widget>
-        </item>
-        <item row="3" column="0">
-         <widget class="QLabel" name="label_2">
-          <property name="text">
-           <string/>
-          </property>
-         </widget>
-        </item>
-        <item row="4" column="0">
-         <widget class="QLabel" name="label_3">
-          <property name="text">
-           <string>X : </string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-     </layout>
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <item>
+          <widget class="QLabel" name="xPos">
+           <property name="text">
+            <string>X : </string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="yPos">
+           <property name="text">
+            <string>Y : </string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+     </widget>
     </item>
-    <item row="0" column="1">
+    <item>
      <layout class="QHBoxLayout" name="imageLayout">
       <item>
-       <widget class="QGraphicsView" name="graphicsView"/>
+       <widget class="QGraphicsView" name="graphicsView">
+        <property name="cursor" stdset="0">
+         <cursorShape>CrossCursor</cursorShape>
+        </property>
+        <property name="mouseTracking">
+         <bool>true</bool>
+        </property>
+       </widget>
       </item>
      </layout>
     </item>
@@ -86,6 +97,7 @@
      <string>Fi&amp;le</string>
     </property>
     <addaction name="actionOpen_Image"/>
+    <addaction name="actionAdd_Image_To_Stack"/>
     <addaction name="actionSave_Image"/>
    </widget>
    <widget class="QMenu" name="menuCompression">
@@ -94,9 +106,9 @@
     </property>
     <addaction name="actionMSE"/>
     <addaction name="actionGenerate_Rainbow"/>
-    <addaction name="actionSet_LUT"/>
-    <addaction name="actionFloyd_Steinberg"/>
-    <addaction name="actionQuantify"/>
+    <addaction name="actionFnS"/>
+    <addaction name="actionDCT"/>
+    <addaction name="actionMPEG"/>
    </widget>
    <widget class="QMenu" name="menuAnalyse">
     <property name="title">
@@ -164,9 +176,9 @@
     <string>&amp;Generate Rainbow</string>
    </property>
   </action>
-  <action name="actionSet_LUT">
+  <action name="actionFnS">
    <property name="text">
-    <string>Set &amp;LUT</string>
+    <string>&amp;Floyd&amp;&amp;Steinberg</string>
    </property>
   </action>
   <action name="actionFloyd_Steinberg">
@@ -185,6 +197,26 @@
    </property>
    <property name="shortcut">
     <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="actionDCT">
+   <property name="text">
+    <string>&amp;Jpeg Compression (View)</string>
+   </property>
+  </action>
+  <action name="actionOpen_Second_Image">
+   <property name="text">
+    <string>Add Image to Stack</string>
+   </property>
+  </action>
+  <action name="actionMPEG">
+   <property name="text">
+    <string>M&amp;PEG</string>
+   </property>
+  </action>
+  <action name="actionAdd_Image_To_Stack">
+   <property name="text">
+    <string>Add Image To Stack</string>
    </property>
   </action>
  </widget>

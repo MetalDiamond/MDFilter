@@ -1,10 +1,16 @@
 #ifndef PGMP5_H
 #define PGMP5_H
 
-class PGMP5
-{
+#include <QString>
+
+class PGMP5 {
+
 public:
-    PGMP5();
+    PGMP5(QString path);
+
+private:
+    int m_width;
+    int m_heigth;
 };
 
 #endif // PGMP5_H
